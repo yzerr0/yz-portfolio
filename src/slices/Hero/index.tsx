@@ -22,14 +22,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       timeline.fromTo(
         ".name-animation",
         { opacity: 0, x: -100, rotate: -10 },
-        { opacity: 1, x: 0, rotate: 0, stagger: 0.1, 
+        { opacity: 1, x: 0, rotate: 0, stagger: { each: 0.1, from: "random" } ,  
           ease: "elastic.out(1,0.3)", duration: 1, transformOrigin: "left top", }
       );
       // or gsap.timeline().fromTo(...) 
       timeline.fromTo(
         ".tagline-animation",
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0 }
+        { opacity: 0, y: 20, scale: 1.2 },
+        { opacity: 1, y: 0, duration: 1, scale: 1 }
       )
     }, component);
     return () => ctx.revert();
