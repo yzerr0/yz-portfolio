@@ -22,14 +22,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       timeline.fromTo(
         ".name-animation",
         { opacity: 0, x: -100, rotate: -10 },
-        { opacity: 1, x: 0, rotate: 0, stagger: { each: 0.1, from: "random" } ,  
-          ease: "elastic.out(1,0.3)", duration: 1, transformOrigin: "left top", }
+        { opacity: 1, x: 0, rotate: 0, delay: 0.5, stagger: { each: 0.1, from: "random" } ,  
+          ease: "elastic.out(1,0.3)", duration: 1, transformOrigin: "left top" }
       );
       // or gsap.timeline().fromTo(...) 
       timeline.fromTo(
         ".tagline-animation",
         { opacity: 0, y: 20, scale: 1.2 },
-        { opacity: 1, y: 0, duration: 1, scale: 1 }
+        { opacity: 1, y: 0, duration: 1, scale: 1, ease: "elastic.out(1,0.3)" }
       )
     }, component);
     return () => ctx.revert();
@@ -60,8 +60,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             {slice.primary.last_name && <span className={"block -mt-1 text-indigo-400"}>{renderLetters(slice.primary.last_name, "last")}</span>}
           </h1>
             {slice.primary.tag_line && <span 
-            //className={"bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 text-transparent"}
-            className={"tagline-animation block bg-clip-text text-2xl font-bold uppercase tracking-[.15em] opacity-100 md:text-4xl"}
+            className={"tagline-animation bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 text-transparent block bg-clip-text text-2xl font-bold uppercase tracking-[.15em] opacity-0 md:text-4xl"}
             >{slice.primary.tag_line}</span>}      
         </div>
       </div>
