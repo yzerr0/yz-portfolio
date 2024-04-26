@@ -5,6 +5,9 @@ import React from "react";
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
+import Bounded from "@/components/Bounded";
+import Shapes from "./Shapes"; 
+
 
 /**
  * Props for `Hero`.
@@ -39,20 +42,24 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     if(!name) throw new Error("First name missing in Hero slice.");
     const letters = name.split('');
     return letters.map((letter, index) => {
-      return <span 
+      return (
+      <span 
         key={index} 
         className={`name-animation name-animation-${key} inline-block opacity-0`}>
-          {letter}</span>;
+          {letter}
+      </span>
+      );
     });
   }
 
   return (
-    <section
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={component}
     >
       <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
+        <Shapes />
         <div className="col-start-1 md:row-start-1">
           <h1 className="mb-8 text-clamp font-extrabold leading-none tracking-tighter" 
           aria-label={slice.primary.first_name + "" + slice.primary.last_name}>
@@ -64,7 +71,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             >{slice.primary.tag_line}</span>}      
         </div>
       </div>
-    </section>
+    </Bounded>
   );
 };
 

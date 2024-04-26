@@ -12,10 +12,13 @@ const Bounded = React.forwardRef<HTMLDivElement, BoundedProps>(
         return (
             <Component ref={ref} {...props}
             className={"px-4 py-10 md:px-6 md:py-14 lg:py-16"}>
-                {children}
+                <div className="mx-auto w-full max-w-7xl">
+                    {children}
+                </div>
             </Component>
         );
     }
 );
 
 Bounded.displayName = "Bounded";
+export default Bounded;
