@@ -26,11 +26,39 @@ function Geometries() {
             position: [0, 0, 0],
             r: 0.3,
             geometry: new THREE.IcosahedronGeometry(3) // Gem
+        },
+        {
+            position: [0, 0, 0],
+            r: 0.3,
+            geometry: new THREE.TorusKnotGeometry(2, 0.5, 100, 16) // Knot
+        },
+        {
+            position: [0, 0, 0],
+            r: 0.3,
+            geometry: new THREE.TorusGeometry(2, 0.5, 16, 100) // Ring
+        },
+        {
+            position: [0, 0, 0],
+            r: 0.3,
+            geometry: new THREE.TetrahedronGeometry(3) // Pyramid
+        },
+        {
+            position: [0, 0, 0],
+            r: 0.3,
+            geometry: new THREE.CapsuleGeometry(3) // Capsule
         }
+
     ]
 
     const materials = [
-        new THREE.MeshNormalMaterial()
+        new THREE.MeshNormalMaterial(),
+        new THREE.MeshStandardMaterial({color: "#2ecc71", roughness: 0}),
+        new THREE.MeshStandardMaterial({color: "#f1c40f", roughness: 0.4}),
+        new THREE.MeshStandardMaterial({color: "#e74c3c", roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: "#8e44ad", roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: "#1abc9c", roughness: 0.1}),
+        new THREE.MeshStandardMaterial({color: "#2980b9", roughness: 0, metalness: 0.75}),
+        new THREE.MeshStandardMaterial({color: "#2c3e50", roughness: 0.1, metalness: 0.9}),
     ]
 
     // Pass to Geometry
