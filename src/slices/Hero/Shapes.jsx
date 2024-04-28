@@ -28,24 +28,24 @@ function Geometries() {
             geometry: new THREE.IcosahedronGeometry(3) // Gem
         },
         {
-            position: [0, 0, 0],
-            r: 0.3,
-            geometry: new THREE.TorusKnotGeometry(2, 0.5, 100, 16) // Knot
+            position: [1, -0.75, 4],
+            r: 0.4,
+            geometry: new THREE.TorusKnotGeometry(0.5, 0.2, 50, 10) // Knot
         },
         {
-            position: [0, 0, 0],
-            r: 0.3,
-            geometry: new THREE.TorusGeometry(2, 0.5, 16, 100) // Ring
+            position: [-1.4, 2, -4],
+            r: 0.5,
+            geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32) // Ring
         },
         {
-            position: [0, 0, 0],
+            position: [-0.8, -0.75, 5],
             r: 0.3,
-            geometry: new THREE.TetrahedronGeometry(3) // Pyramid
+            geometry: new THREE.TetrahedronGeometry(1) // Pyramid
         },
         {
-            position: [0, 0, 0],
+            position: [1.6, 1.6, -4],
             r: 0.3,
-            geometry: new THREE.CapsuleGeometry(3) // Capsule
+            geometry: new THREE.CapsuleGeometry(0.5, 1.6, 2, 16) // Capsule
         }
 
     ]
